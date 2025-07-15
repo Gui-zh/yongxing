@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>永兴副食品店 - 烟酒奶及生活用品一站式购物</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #c72e2e;
+            --primary-dark: #9d2424;
+            --secondary: #e67e22;
+            --light: #f9f9f9;
+            --dark: #333;
+            --darker: #222;
+            --gray: #777;
+            --light-gray: #eaeaea;
+            --border: #e0e0e0;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-hover: 0 6px 16px rgba(0,0,0,0.15);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* 头部样式 */
+        header {
+            background-color: #fff;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-top {
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info > div {
+            margin: 5px 0;
+        }
+        
+        .phone {
+            font-size: 1.3rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        
+        .phone i {
+            margin-right: 8px;
+        }
+        
+        .wechat-contact {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .wechat-btn {
+            background: #2aad19;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            margin-left: 15px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        
+        .wechat-btn i {
+            margin-right: 5px;
+        }
+        
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-icon i {
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        .logo-text {
+            margin-left: 15px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+        
+        .logo p {
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin: 0 10px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 1.05rem;
+        }
+        
+        .nav-menu a:hover, 
+        .nav-menu a.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        
+        /* 首屏横幅 */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/1563014959-7aaa83350992');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 0 0 30px 30px;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-block;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        /* 商品分类 */
+        .section-title {
+            text-align: center;
+            margin: 40px 0 30px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            display: inline-block;
+            background: white;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+            color: var(--primary);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            z-index: 1;
+        }
+        
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+        
+        .category {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            width: 270px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .category:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .category-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .cigarettes {
+            background-image: url('https://images.unsplash.com/photo-1594136387016-240b5b8b6a0f');
+            background-color: #5d4037;
+        }
+        
+        .alcohol {
+            background-image: url('https://images.unsplash.com/photo-1535958636474-b021ee887b13');
+            background-color: #4e342e;
+        }
+        
+        .dairy {
+            background-image: url('https://images.unsplash.com/photo-1566772940194-1107b4c3a0d3');
+            background-color: #f57c00;
+        }
+        
+        .daily {
+            background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae');
+            background-color: #7cb342;
+        }
+        
+        .category-content {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .category h3 {
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1.4rem;
+        }
+        
+        .category p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            min-height: 60px;
+        }
+        
+        /* 热销商品 */
+        .featured-products {
+            margin-bottom: 50px;
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .product {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .product-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-content {
+            padding: 20px;
+        }
+        
+        .product h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            color: var(--darker);
+        }
+        
+        .product p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            min-height: 44px;
+        }
+        
+        .product-price {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin: 10px 0;
+        }
+        
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        
+        .btn {
+            padding: 8px 15px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn i {
+            margin-right: 5px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            flex: 1;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+        
+        .btn-secondary {
+            background: #f0f0f0;
+            color: var(--dark);
+            margin-left: 10px;
+        }
+        
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+        
+        /* 关于我们 */
+        .about {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 350px;
+            background-image: url('https://images.unsplash.com/photo-1563014811-2d0f3b9b4f1a');
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .about h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .about-text {
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .advantage {
+            display: flex;
+            align-items: flex-start;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .advantage:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .advantage i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-right: 15px;
+            min-width: 40px;
+        }
+        
+        .advantage-content h3 {
+            margin-bottom: 8px;
+            color: var(--darker);
+        }
+        
+        .advantage-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        /* 联系方式 */
+        .contact {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .contact-detail:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .contact-detail i {
+            font-size: 1.8rem;
+            color: var(--primary);
+            width: 50px;
+            min-width: 50px;
+            margin-top: 5px;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--darker);
+        }
+        
+        .contact-text p {
+            color: var(--gray);
+            font-size: 1.05rem;
+        }
+        
+        .map {
+            flex: 1;
+            min-width: 300px;
+            height: 100%;
+            min-height: 300px;
+            background: #e9e9e9;
+            border-radius: var(--border-radius);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            box-shadow: var(--shadow);
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1574170608909-69b2d97b2cde');
+            background-size: cover;
+        }
+        
+        .map i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .map h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--darker);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--darker);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            gap: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 3px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #444;
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .hero {
+                height: 400px;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                padding: 15px 0;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 5px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-menu a {
+                display: block;
+                padding: 10px 15px;
+            }
+            
+            .hero {
+                height: 350px;
+                border-radius: 0 0 20px 20px;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .category {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .about, .contact {
+                padding: 30px;
+            }
+            
+            .about-image {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-top {
+                padding: 10px 0;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .wechat-contact {
+                margin-top: 10px;
+                width: 100%;
+            }
+            
+            .wechat-btn {
+                margin-left: 0;
+                margin-top: 8px;
+            }
+            
+            .hero {
+                height: 300px;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .cta-button {
+                padding: 10px 25px;
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .product-price {
+                font-size: 1.3rem;
+            }
+            
+            .btn {
+                font-size: 0.9rem;
+                padding: 8px 10px;
+            }
+            
+            .about, .contact {
+                padding: 20px;
+            }
+            
+            .about-image {
+                height: 250px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <div class="phone">
+                        <i class="fas fa-phone"></i> 0701-6213063
+                    </div>
+                    <div class="wechat-contact">
+                        <span>微信咨询/下单：</span>
+                        <div class="wechat-btn">
+                            <i class="fab fa-weixin"></i> gui_yx6686688888
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="main-header">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>永兴副食品店</h1>
+                        <p>烟酒奶齐全 • 生活用品一站购</p>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">热销商品</a></li>
+                    <li><a href="#">烟酒专区</a></li>
+                    <li><a href="#">奶品饮料</a></li>
+                    <li><a href="#">生活用品</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <!-- 首屏横幅 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>永兴副食品店 - 您身边的购物好伙伴</h2>
+            <p>主营各类香烟、白酒啤酒、品牌牛奶、日用百货，支持电话/微信下单，本村及周边地区免费送货上门</p>
+            <a href="tel:0701-6213063" class="cta-button">立即电话订购 <i class="fas fa-phone"></i></a>
+        </div>
+    </section>
+    
+    <div class="container">
+        <!-- 商品分类 -->
+        <section class="categories-section">
+            <div class="section-title">
+                <h2>主营商品</h2>
+            </div>
+            
+            <div class="categories">
+                <div class="category">
+                    <div class="category-img cigarettes"></div>
+                    <div class="category-content">
+                        <h3>香烟专区</h3>
+                        <p>中华、玉溪、黄鹤楼、利群、云烟等知名品牌，种类齐全，品质保证</p>
+                        <small style="color: #e74c3c; display: block; margin-top: 10px;">吸烟有害健康</small>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-img alcohol"></div>
+                    <div class="category-content">
+                        <h3>酒水饮料</h3>
+                        <p>白酒、啤酒、葡萄酒、黄酒、各类饮料，满足不同场合需求</p>
+                        <small style="color: #e74c3c; display: block; margin-top: 10px;">未成年人禁止饮酒</small>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-img dairy"></div>
+                    <div class="category-content">
+                        <h3>奶制品</h3>
+                        <p>纯牛奶、酸奶、儿童奶、奶粉等，新鲜营养，每日配送</p>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-img daily"></div>
+                    <div class="category-content">
+                        <h3>生活用品</h3>
+                        <p>粮油调味、休闲零食、日用百货等，家庭生活必需品一站购齐</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 热销商品 -->
+        <section class="featured-products">
+            <div class="section-title">
+                <h2>热销推荐</h2>
+            </div>
+            
+            <div class="products">
+                <div class="product">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1602488257130-cc54f4d8b54f'); background-color: #d32f2f;"></div>
+                    <div class="product-content">
+                        <h3>中华(软)</h3>
+                        <p>经典高端香烟，口感醇香，商务宴请首选</p>
+                        <div class="product-price">¥68/包</div>
+                        <small style="color: #e74c3c; display: block; margin-bottom: 15px;">吸烟有害健康</small>
+                        <div class="product-actions">
+                            <a href="tel:0701-6213063" class="btn btn-primary"><i class="fas fa-phone"></i> 电话订购</a>
+                            <button class="btn btn-secondary"><i class="fab fa-weixin"></i> 微信咨询</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1570598422328-54b7f8a75f8d'); background-color: #f57c00;"></div>
+                    <div class="product-content">
+                        <h3>五粮液52度</h3>
+                        <p>浓香型白酒，宴请佳品，送礼收藏皆宜</p>
+                        <div class="product-price">¥1050/瓶</div>
+                        <small style="color: #e74c3c; display: block; margin-bottom: 15px;">未成年人禁止饮酒</small>
+                        <div class="product-actions">
+                            <a href="tel:0701-6213063" class="btn btn-primary"><i class="fas fa-phone"></i> 电话订购</a>
+                            <button class="btn btn-secondary"><i class="fab fa-weixin"></i> 微信咨询</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1563636619-e9143da7973b'); background-color: #7cb342;"></div>
+                    <div class="product-content">
+                        <h3>蒙牛纯牛奶</h3>
+                        <p>250ml×24盒/箱，新鲜营养，全家共享</p>
+                        <div class="product-price">¥68/箱</div>
+                        <div class="product-actions">
+                            <a href="tel:0701-6213063" class="btn btn-primary"><i class="fas fa-phone"></i> 电话订购</a>
+                            <button class="btn btn-secondary"><i class="fab fa-weixin"></i> 微信咨询</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1625772299848-391b6a87d7b3'); background-color: #0288d1;"></div>
+                    <div class="product-content">
+                        <h3>金龙鱼食用油</h3>
+                        <p>5L装，家用实惠装，健康烹饪好选择</p>
+                        <div class="product-price">¥78/桶</div>
+                        <div class="product-actions">
+                            <a href="tel:0701-6213063" class="btn btn-primary"><i class="fas fa-phone"></i> 电话订购</a>
+                            <button class="btn btn-secondary"><i class="fab fa-weixin"></i> 微信咨询</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 关于我们 -->
+        <section class="about">
+            <div class="about-content">
+                <h2>关于永兴副食品店</h2>
+                <p class="about-text">永兴副食品店成立于2012年，十年来一直秉承"诚信为本，服务乡邻"的经营理念，为本地居民提供优质的商品和贴心的服务。我们坚持正品保障，价格公道，是您值得信赖的购物伙伴。</p>
+                
+                <div class="advantages">
+                    <div class="advantage">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="advantage-content">
+                            <h3>正品保障</h3>
+                            <p>所有商品渠道正规，假一赔十</p>
+                        </div>
+                    </div>
+                    
+                    <div class="advantage">
+                        <i class="fas fa-tag"></i>
+                        <div class="advantage-content">
+                            <h3>价格公道</h3>
+                            <p>明码标价，乡里乡亲最实惠</p>
+                        </div>
+                    </div>
+                    
+                    <div class="advantage">
+                        <i class="fas fa-truck"></i>
+                        <div class="advantage-content">
+                            <h3>送货上门</h3>
+                            <p>本村及周边3公里范围内免费送货</p>
+                        </div>
+                    </div>
+                    
+                    <div class="advantage">
+                        <i class="fas fa-smile"></i>
+                        <div class="advantage-content">
+                            <h3>服务周到</h3>
+                            <p>热情服务，满足您的生活所需</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-image"></div>
+        </section>
+        
+        <!-- 联系方式 -->
+        <section class="contact">
+            <div class="contact-info">
+                <h3>联系我们</h3>
+                
+                <div class="contact-detail">
+                    <i class="fas fa-phone"></i>
+                    <div class="contact-text">
+                        <h4>订购电话</h4>
+                        <p>0701-6213063（24小时接听）</p>
+                    </div>
+                </div>
+                
+                <div class="contact-detail">
+                    <i class="fab fa-weixin"></i>
+                    <div class="contact-text">
+                        <h4>微信咨询</h4>
+                        <p>gui_yx6686688888（扫码添加微信下单）</p>
+                    </div>
+                </div>
+                
+                <div class="contact-detail">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="contact-text">
+                        <h4>店铺地址</h4>
+                        <p>永兴镇中心路28号（近永兴小学）</p>
+                    </div>
+                </div>
+                
+                <div class="contact-detail">
+                    <i class="fas fa-clock"></i>
+                    <div class="contact-text">
+                        <h4>营业时间</h4>
+                        <p>周一至周日：7:00 - 22:00（全年无休）</p>
+                    </div>
+                </div>
+                
+                <a href="tel:0701-6213063" class="cta-button" style="margin-top: 20px;">立即拨打电话订购</a>
+            </div>
+            
+            <div class="map">
+                <i class="fas fa-map-marked-alt"></i>
+                <h4>店铺位置</h4>
+                <p>永兴镇中心路28号</p>
+                <p>（近永兴小学，交通便利）</p>
+            </div>
+        </section>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>永兴副食品店</h3>
+                    <p style="color: #bbb; margin-bottom: 15px;">诚信经营十余载，服务乡邻惠万家。主营各类烟酒奶制品及生活用品，支持送货上门。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">热销商品</a></li>
+                        <li><a href="#">烟酒专区</a></li>
+                        <li><a href="#">奶品饮料</a></li>
+                        <li><a href="#">生活用品</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:0701-6213063"><i class="fas fa-phone"></i> 0701-6213063</a></li>
+                        <li><a href="#"><i class="fab fa-weixin"></i> gui_yx6686688888</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 永兴镇中心路28号</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> 7:00 - 22:00</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2023 永兴副食品店 版权所有 | 温馨提示：吸烟有害健康，未成年人禁止饮酒</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // 商品分类悬停效果增强
+        const categories = document.querySelectorAll('.category');
+        categories.forEach(category => {
+            category.addEventListener('mouseenter', () => {
+                category.style.transform = 'translateY(-10px)';
+            });
+            
+            category.addEventListener('mouseleave', () => {
+                category.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
